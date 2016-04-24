@@ -11,6 +11,7 @@ class SubscribersController < ApplicationController
     @subscriber = Subscriber.create(subscriber_params)
     if @subscriber.save
       flash[:success] = "Subscriber Has Been Created"
+      redirect_to new_subscriber_path(:subscriber)
     else
       render "new"
     end
