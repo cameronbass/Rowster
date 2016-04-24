@@ -1,0 +1,22 @@
+<h1>Listing subscribers</h1>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+      <tbody>
+        <% @subscriber.each do |subscriber| %>
+          <tr>
+            <td><%= subscriber.first_name %></td>
+            <td><%= subscriber.last_name %></td>
+            <td><%= subscriber.email %></td>
+            <td><%= subscriber.phone_number %></td>
+          </tr>
+        <% end %>
+      </tbody>
+  </table>
