@@ -1,5 +1,13 @@
 <h1>Enter your Information</h1>
 
+<% if @subscriber.errors.any? %>
+<ul>
+<% @subscriber.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+<% end %>
+
 <%= form_for @subscriber do |form| %>
   <div class="form-group">
     <%= form.label :first_name %>
@@ -8,6 +16,8 @@
     <%= form.text_field :last_name %>
     <%= form.label :email %>
     <%= form.text_field :email %>
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
   </div>
   <%= form.submit "Sign Up", class: "btn btn-primary" %>
 <% end %>

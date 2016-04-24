@@ -29,6 +29,6 @@ class SubscribersController < ApplicationController
   private
 
   def subscriber_params
-    params.require(:subscriber).permit(:first_name, :last_name, :email)
+    params.require(:subscriber).permit(:first_name, :last_name, :email, :phone_number)
   end
 end
