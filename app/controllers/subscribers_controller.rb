@@ -4,6 +4,7 @@ class SubscribersController < ApplicationController
   end
 
   def show
+    @subscriber = Subscriber.params[:id]
   end
 
   def new
