@@ -1,2 +1,14 @@
 @import "public/navbar";
-@import "public/data-tables"
+@import "public/data-tables";
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+}
+
+p, div, a, td, tr {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+  background-color: #e6e6d4;
+}
