@@ -7,4 +7,8 @@ class Subscriber < ActiveRecord::Base
   def date_joined
     created_at.strftime("%-m/%-d/%-y")
   end
+
+  def expiration_date
+    (created_at + 1.year).strftime("%-m/%-d/%-y")
+  end
 end
