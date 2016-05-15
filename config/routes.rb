@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root "welcomes#index"
 
-  get "subscribers/validate", to: "subscribers#validate"
+  post "subscribers/validate", to: "subscribers#validate"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
