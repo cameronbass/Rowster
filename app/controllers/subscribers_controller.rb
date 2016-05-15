@@ -3,10 +3,6 @@ class SubscribersController < ApplicationController
     @subscriber = Subscriber.all
   end
 
-  def show
-    @subscriber = Subscriber.params[:id]
-  end
-
   def new
     @subscriber = Subscriber.new
   end
@@ -14,7 +10,7 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.create(subscriber_params)
     if @subscriber.save
-      flash[:success] = "Subscriber Has Been Created"
+      flash[:success] = "Subscriber Has Been successfully Created"
       redirect_to new_subscriber_path(:subscriber)
     else
       render "new"
@@ -28,6 +24,14 @@ class SubscribersController < ApplicationController
   end
 
   def update
+    
+  end
+
+  def validate
+    @subscriber = Subscriber.all
+  end
+
+  def show
   end
 
   private

@@ -1,0 +1,12 @@
+<h1>This is the form for phone number validation</h1>
+
+<%= form_for @subscribers do |form| %>
+
+  <div class="form-group">
+    <p>
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
+    </p>
+  </div>  
+
+<% end %>
