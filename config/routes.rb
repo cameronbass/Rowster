@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :subscribers, except: :show
+  resources :check_ins 
 
   root "welcomes#index"
 
