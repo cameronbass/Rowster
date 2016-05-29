@@ -17,23 +17,6 @@ class SubscribersController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def destroy
-  end
-
-  def update
-    
-  end
-
-  def validate
-    @subscriber = Subscriber.all
-  end
-
-  def show
-  end
-
   private
 
   def subscriber_params
