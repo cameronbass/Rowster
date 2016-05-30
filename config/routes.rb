@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :subscribers, except: :show
-  get '/subscribers/visits/new', to: 'subscribers/visits#new'
+  get "subscribers/search", to: "subscribers#search"
+  get "subscribers/visit", to: "subscribers#visit"
 
 
   root "welcomes#index"

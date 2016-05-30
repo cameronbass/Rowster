@@ -17,6 +17,22 @@ class SubscribersController < ApplicationController
     end
   end
 
+  def search
+    @subscriber = Subscriber.new
+  end
+
+  def visit
+    @subscriber = Subscriber.find_by_phone_number(params[:phone_number])
+    if @subscriber
+      @subscriber.visit += 1
+      @subscriber.save
+      redirect_to root_path(:subscriber)
+    else
+      render "search"
+    end
+  end
+
+
   private
 
   def subscriber_params
