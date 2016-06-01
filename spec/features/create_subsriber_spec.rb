@@ -4,9 +4,9 @@ RSpec.feature "Create a subscriber" do
   scenario "Customer can sign up as a subscriber" do
     visit "/subscribers/new"
 
-    user = User.create!(email: "user@example.com", password: "password")
-    fill_in "Email", with: "user@example.com"
-    fill_in "Password", with: "password"
+    user = FactoryGirl.create(:user)
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
     click_button "Sign in"
 
     fill_in "subscriber_first_name", with: "Cam"
