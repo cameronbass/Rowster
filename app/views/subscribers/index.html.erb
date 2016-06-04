@@ -10,6 +10,7 @@
         <th>Date Joined</th>
         <th>Expiration</th>
         <th>Visits</td>
+        <th>Days</td>
       </tr>
     </thead>
       <tbody>
@@ -22,6 +23,7 @@
             <td><%= subscriber.date_joined %></td>
             <td><%= subscriber.expiration_date %></td>
             <td><%= subscriber.visit %></td>
+            <td><%= subscriber.days_till_expired %></td>
           </tr>
         <% end %>
       </tbody>
