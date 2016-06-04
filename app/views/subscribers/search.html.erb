@@ -1,6 +1,6 @@
-<h1>hey</h1>
+<h1>Welcome! Check In By Entering Your Phone Number</h1>
 
 <%= form_tag({controller: "subscribers", action: "visit"}, method: "get") do %>
   <%= text_field_tag :phone_number %>
-  <%= submit_tag "Submit" %>
+  <%= submit_tag "Check In" %>
 <% end %>

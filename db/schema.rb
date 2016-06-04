@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160530221755) do
 
-
   create_table "subscribers", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"

@@ -10,7 +10,7 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.create(subscriber_params)
     if @subscriber.save
-      flash[:success] = "Subscriber Has Been successfully Created"
+      flash[:notice] = "Subscriber Has Been Successfully Created"
       redirect_to new_subscriber_path(:subscriber)
     else
       render "new"
@@ -24,9 +24,9 @@ class SubscribersController < ApplicationController
   def visit
     @subscriber = Subscriber.find_by_phone_number(params[:phone_number])
     if @subscriber
-      @subscriber.visit += 1
+      @subscriber.visit =+ 1
       @subscriber.save
-      redirect_to root_path(:subscriber)
+      redirect_to subscribers_search_path(:subscriber)
     else
       render "search"
     end
