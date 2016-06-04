@@ -26,6 +26,7 @@ class SubscribersController < ApplicationController
     if @subscriber
       @subscriber.visit =+ 1
       @subscriber.save
+      flash[:notice] = "thanks"
       redirect_to subscribers_search_path(:subscriber)
     else
       render "search"
