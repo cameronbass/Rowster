@@ -39,4 +39,12 @@ class SubscribersController < ApplicationController
   def subscriber_params
     params.require(:subscriber).permit(:first_name, :last_name, :email, :phone_number)
   end
+
+  def sort_column
+    Person.column_names.include?(params[:sort]) ? params[:sort] : "visit"
+  end
+
+  def sort_direction
+    %w(asc desc).include?(params[:direction]) ? params[:direction] : "asc"
+  end
 end
