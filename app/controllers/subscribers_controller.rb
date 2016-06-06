@@ -24,7 +24,7 @@ class SubscribersController < ApplicationController
   def visit
     @subscriber = Subscriber.find_by_phone_number(params[:phone_number])
     if @subscriber
-      @subscriber.visit += 1
+      @subscriber.visit =+ 1
       @subscriber.save
       flash[:notice] = flash[:notice] = "Thank You #{@subscriber.first_name}. You have #{@subscriber.days_till_expired} until renewal"
       redirect_to subscribers_search_path(:subscriber)

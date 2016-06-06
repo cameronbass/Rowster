@@ -17,4 +17,20 @@ RSpec.feature "Create a subscriber" do
 
     expect(page).to have_content("Subscriber Has Been Successfully Created")
   end
+
+  scenario "Subscriber can sign in" do
+    visit "/subscribers/search"
+
+    user = FactoryGirl.create(:user)
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Sign in"
+
+    subscriber = FactoryGirl.create(:subscriber)
+
+    fill_in "phone_number", with: "8765555"
+    click_button "Check In"
+
+    expect(page).to have_content("Thank You #{subscriber.first_name}. You have #{subscriber.days_till_expired} until renewal")
+  end
 end
