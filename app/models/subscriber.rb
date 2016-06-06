@@ -1,4 +1,6 @@
 class Subscriber < ActiveRecord::Base
+  has_many :comments
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   VALID_PHONE_REGEX = /\d{7}/
   validates :first_name, presence: true
