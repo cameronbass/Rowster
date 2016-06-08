@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comments = Comments.create(comments_params)
     if @comments.save
       flash[:notice] = "Subscriber Has Been Successfully Created"
-      redirect_to new_subscriber_path(:subscriber)
+      redirect_to new_subscriber_path(:comments)
     else
       render "new"
     end
