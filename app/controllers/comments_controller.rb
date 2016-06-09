@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
   def new
-    @comments = Comments.new
+    @comments = Comment.new
   end
 
   def create
-    @comments = Comments.create(comments_params)
+    @comments = Comment.create(comments_params)
     if @comments.save
       flash[:notice] = "Subscriber Has Been Successfully Created"
       redirect_to new_subscriber_path(:comments)
@@ -17,4 +17,5 @@ class CommentsController < ApplicationController
 
   def comments_params
     params.require(:comments).permit(:description, :fav_drink, :visit_time)
+  end
 end
