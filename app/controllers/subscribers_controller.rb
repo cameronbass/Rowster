@@ -1,6 +1,8 @@
 class SubscribersController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
   def index
-    @subscriber = Subscriber.all
+    @subscriber = Subscriber.order(sort_column + " " + sort_direction)
   end
 
   def new
@@ -42,7 +44,7 @@ class SubscribersController < ApplicationController
   end
 
   def sort_column
-    Person.column_names.include?(params[:sort]) ? params[:sort] : "visit"
+    Subscriber.column_names.include?(params[:sort]) ? params[:sort] : "visit"
   end
 
   def sort_direction
