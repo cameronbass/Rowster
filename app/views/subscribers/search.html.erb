@@ -1,7 +1,11 @@
 <h1>Welcome! Check In By Entering Your Phone Number</h1>
 
 <%= form_tag({controller: "subscribers", action: "visit"}, method: "get") do %>
-  <%= text_field_tag :phone_number %>
+  <div class="form-group">
+    <p>
+  <%= text_field_tag :phone_number, placeholder: "Check In", class: "text_field" %>
+    </p>
+  </div>
   <%= submit_tag "Check In" %>
 <% end %>
 

@@ -9,7 +9,7 @@ require "rails_helper"
       sign_in(user)
       subscriber = FactoryGirl.attributes_for(:subscriber)
 
-      expect { post :create, :subscriber =>  subscriber }.to change(Subscriber, :count).by(1)
+      expect { post :create, :subscriber =>  subscriber }.to change{ Subscriber.count }.by(1)
     end
 
     it "adds 1 to the visit attribute" do

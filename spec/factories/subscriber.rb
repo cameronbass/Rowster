@@ -5,7 +5,4 @@ FactoryGirl.define do
     email "tyler@example.com"
     phone_number "8765555"
   end
-
-  trait :visited do
-  end
 end
