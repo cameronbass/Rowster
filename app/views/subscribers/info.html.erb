@@ -1,0 +1,10 @@
+<h1>Hello Subscriber</h1>
+
+<% if @subscriber %>
+  <tr>
+    <td><%= image_tag avatar_url(@subscriber) %></td>
+    <td><%= @subscriber.first_name %></td>
+  </tr>
+<% else %>
+  <tr><td>No subscriber found!</td></tr>
+<% end %>

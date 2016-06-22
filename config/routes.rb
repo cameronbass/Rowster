@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get "subscribers/search", to: "subscribers#search"
   get "subscribers/visit", to: "subscribers#visit"
+  get "subscribers/info", to: "subscribers#info"
 
   root "subscribers#new"
 

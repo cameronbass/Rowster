@@ -3,7 +3,7 @@
 <%= form_tag({controller: "subscribers", action: "visit"}, method: "get") do %>
   <div class="form-group">
     <p>
-  <%= text_field_tag :phone_number, placeholder: "Check In", class: "text_field" %>
+  <%= text_field_tag :phone_number %>
     </p>
   </div>
   <%= submit_tag "Check In" %>

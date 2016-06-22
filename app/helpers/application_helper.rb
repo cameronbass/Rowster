@@ -13,4 +13,9 @@ module ApplicationHelper
     end
     link_to "#{title} <span class='#{css_class}'></span>".html_safe, sort: column, direction: direction
   end
+
+  def avatar_url(subscriber)
+    gravatar_id = Digest::MD5.hexdigest(subscriber.email.downcase)
+    "http://gravatar.com/avatar/#{gravatar_id}.png"
+  end
 end
