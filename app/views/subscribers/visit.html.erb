@@ -1,13 +1,10 @@
-<h1>Thank You <%= @subscriber.first_name %>!</h1>
+<a href="#openModal">Open Modal</a>
 
-<% if @subscriber %>
-  <tr>
-    <td><%= image_tag avatar_url(@subscriber) %></td>
-    <td><%= @subscriber.first_name %></td>
-    <td><%= @subscriber.comments %></td>
-  </tr>
-<% else %>
-  <tr><td>No subscriber found!</td></tr>
-<% end %>
-
-<h2>Let us get to know you more <%= link_to 'Comment', new_comment_path %> </h2>
+<div id="openModal" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close">X</a>
+		<h2>Modal Box</h2>
+		<p>This is a sample modal box that can be created using the powers of CSS3.</p>
+		<p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
+	</div>
+</div>
