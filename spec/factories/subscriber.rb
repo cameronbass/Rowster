@@ -3,6 +3,6 @@ FactoryGirl.define do
     first_name "Tyler"
     last_name "Durden"
     email "tyler@example.com"
-    phone_number "8765555"
+    phone_number "6168765555"
   end
 end

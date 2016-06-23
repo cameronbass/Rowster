@@ -1,10 +1,13 @@
-<h1>Hello Subscriber</h1>
+<h1>Thank You <%= @subscriber.first_name %>!</h1>
 
 <% if @subscriber %>
   <tr>
     <td><%= image_tag avatar_url(@subscriber) %></td>
     <td><%= @subscriber.first_name %></td>
+    <td><%= @subscriber.comments %></td>
   </tr>
 <% else %>
   <tr><td>No subscriber found!</td></tr>
 <% end %>
+
+<h2>Let us get to know you more <%= link_to 'Comment', new_comment_path %> </h2>
