@@ -1,10 +1,5 @@
-<a href="#openModal">Open Modal</a>
-
-<div id="openModal" class="modalDialog">
 	<div>
-		<a href="#close" title="Close" class="close">X</a>
 		<h2>Thanks For Stopping in <%= @subscriber.first_name %>!</h2>
 		<p>You have <%= @subscriber.days_till_expired %> until renwal</p>
 		<p><%= @subscriber.first_name %> this is your <%= @subscriber.visit %> to the shop since your subscription started.</p>
 	</div>
-</div>

@@ -29,7 +29,6 @@ class SubscribersController < ApplicationController
       @subscriber.visit ||= 0
       @subscriber.visit += 1
       @subscriber.save
-      flash[:notice] = "Thank You #{@subscriber.first_name}. You have #{@subscriber.days_till_expired} until renewal"
       render "visit"
     end
   end
