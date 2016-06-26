@@ -1,15 +1,23 @@
-<h1>Listing subscribers</h1>
+<h1 style=text-align:center;><%= @subscriber.count %> Subscribers</h1>
+
+<%= search_form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :first_name_cont, "First Name Contains" %>
+    <%= f.text_field :first_name_cont %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
 
 <table class="table table-striped">
     <thead>
       <tr>
-        <th><%= sortable "first_name", "First Name" %></th>
-        <th><%= sortable "last_name", "Surname" %></th>
-        <th><%= sortable "email", "Email" %></th>
-        <th><%= sortable "phone_number", "Phone" %></th>
-        <th><%= sortable "created_at", "Date Joined" %></th>
+        <th><%= sort_link @search, :first_name, "First Name" %></th>
+        <th><%= sort_link @search, :last_name, "Last Name" %></th>
+        <th><%= sort_link @search, :email, "Email" %></th>
+        <th><%= sort_link @search, :phone_number, "Phone" %></th>
+        <th><%= sort_link @search, :created_at, "Date Joined" %></th>
         <th><%= sortable "expiration_date", "Expiration" %></th>
-        <th><%= sortable "visit", "Visits" %></td>
+        <th><%= sort_link @search, :visit, "Visits" %></td>
         <th><%= sortable "days_till_expired", "Days Remaining" %></td>
       </tr>
     </thead>

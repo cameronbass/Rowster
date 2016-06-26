@@ -2,7 +2,8 @@ class SubscribersController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @subscriber = Subscriber.order(sort_column + " " + sort_direction)
+    @search = Subscriber.search(params[:q])
+    @subscriber = @search.result
   end
 
   def new

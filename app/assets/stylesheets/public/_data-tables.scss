@@ -11,6 +11,18 @@ th, td {
 tr:nth-child(even){background-color: #f2f2f2}
 
 th {
-    background-color: #4CAF50;
+    background-color: #005f5f;
     color: white;
+}
+
+th a.current {
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+th a.current.asc {
+  background-image: url(/assets/up_arrow.gif);
+}
+th a.current.desc {
+  background-image: url(/assets/down_arrow.gif);
 }

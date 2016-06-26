@@ -1,5 +1,6 @@
 @import "public/navbar";
 @import "public/data-tables";
+@import "public/sign-up";
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
@@ -9,35 +10,6 @@ p, div, a, td, tr {
     font-family: 'Lato', sans-serif;
 }
 
-p:focus {
-  box-shadow: inset 1px 1px 2px 0 #c9c9c9;
-}
-
 body {
-  background-color: #e6e6d4;
-}
-
-.text_field {
-  width: 200px;
-  height: 25px;
-  border-radius: 10px;
-  text-align: center;
-  padding: 5px;
-  font-size: 16px;
-}
-
-.container {
-  text-align: center;
-}
-
-th a.current {
-  padding-right: 20px;
-  background-repeat: no-repeat;
-  background-position: right center;
-}
-th a.current.asc {
-  background-image: url(/assets/up_arrow.gif);
-}
-th a.current.desc {
-  background-image: url(/assets/down_arrow.gif);
+  background-color: #005f5f;
 }
