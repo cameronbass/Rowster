@@ -4,6 +4,8 @@ class SubscribersController < ApplicationController
   def index
     @search = Subscriber.search(params[:q])
     @subscriber = @search.result
+    @search.build_condition if @search.conditions.empty?
+    @search.build_sort if @search.sorts.empty?
   end
 
   def new

@@ -1,9 +1,15 @@
 <h1 style=text-align:center;><%= @subscriber.count %> Subscribers</h1>
 
 <%= search_form_for @search do |f| %>
+<%= f.condition_fields do |c| %>
+    <%= render "condition_fields", f: c %>
+  <% end %>
+  <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
   <div class="field">
-    <%= f.label :first_name_cont, "First Name Contains" %>
-    <%= f.text_field :first_name_cont %>
+    Sort:
+    <%= f.sort_fields do |s| %>
+      <%= s.sort_select %>
+    <% end %>
   </div>
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
