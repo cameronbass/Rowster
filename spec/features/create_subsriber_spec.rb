@@ -31,6 +31,6 @@ RSpec.feature "Create a subscriber" do
     fill_in "phone_number", with: "6168765555"
     click_button "Check In"
 
-    expect(page).to have_content("Thank You #{subscriber.first_name}. You have #{subscriber.days_till_expired} until renewal")
+    expect(page).to_not have_content("thanks")
   end
 end

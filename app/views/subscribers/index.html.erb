@@ -25,20 +25,22 @@
         <th><%= sortable "expiration_date", "Expiration" %></th>
         <th><%= sort_link @search, :visit, "Visits" %></td>
         <th><%= sortable "days_till_expired", "Days Remaining" %></td>
+        <th><%= sortable "mug_number", "Number" %></td>
       </tr>
     </thead>
-      <tbody>
-        <% @subscriber.each do |subscriber| %>
-          <tr>
-            <td><%= subscriber.first_name %></td>
-            <td><%= subscriber.last_name %></td>
-            <td><%= subscriber.email %></td>
-            <td><%= subscriber.phone_number %></td>
-            <td><%= subscriber.date_joined %></td>
-            <td><%= subscriber.expiration_date %></td>
-            <td><%= subscriber.visit %></td>
-            <td><%= subscriber.days_till_expired %></td>
-          </tr>
-        <% end %>
-      </tbody>
+    <tbody>
+      <% @subscriber.each do |subscriber| %>
+        <tr>
+          <td><%= subscriber.first_name %></td>
+          <td><%= subscriber.last_name %></td>
+          <td><%= subscriber.email %></td>
+          <td><%= subscriber.phone_number %></td>
+          <td><%= subscriber.date_joined %></td>
+          <td><%= subscriber.expiration_date %></td>
+          <td><%= subscriber.visit %></td>
+          <td><%= subscriber.days_till_expired %></td>
+          <td><%= subscriber.mug_number %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
