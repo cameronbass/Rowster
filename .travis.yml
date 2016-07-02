@@ -1,3 +1,13 @@
+rvm: "2.2.1"
+sudo: false
+before_script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+branches:
+  only:
+    - master
+cache: bundler
 language: ruby
-rvm:
-  
+notifications:
+  webhooks:
+    on_start: always
