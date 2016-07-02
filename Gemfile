@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
+ruby '2.2.4'
 
 gem 'rails', '4.2.6'
+
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
