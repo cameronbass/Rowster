@@ -17,11 +17,11 @@ class Subscriber < ActiveRecord::Base
   end
 
   def expiration_date
-    (created_at + 1.year).strftime("%-m/%-d/%-y")
+    (subscription_date + 1.year).strftime("%-m/%-d/%-y")
   end
 
   def days_till_expired
-    ((created_at + 1.year) - DateTime.now).to_i / 1.day
+    ((subscription_date + 1.year) - DateTime.now).to_i / 1.day
   end
 
   def subscribing?
