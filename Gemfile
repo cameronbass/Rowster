@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.4'
+ruby '2.2.1'
 
 gem 'rails', '4.2.6'
 
@@ -31,6 +31,7 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "simplecov", require: false
   gem "shoulda-matchers"
+  gem "rake"
 end
 
 group :development do

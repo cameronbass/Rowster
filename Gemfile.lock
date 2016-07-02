@@ -248,6 +248,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.2.6)
   rails_12factor
+  rake
   ransack
   rspec-rails
   sass-rails (~> 5.0)
