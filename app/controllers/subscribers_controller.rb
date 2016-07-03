@@ -15,7 +15,8 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.new(subscriber_params)
     if @subscriber.save
-    @subscriber.touch(:subscription_date)
+      SubscriberMailer.subscription_confirmation(@subscriber).deliver_now
+      @subscriber.touch(:subscription_date)
       flash[:notice] = "Subscriber Has Been Successfully Created"
       redirect_to new_subscriber_path(:subscriber)
     else

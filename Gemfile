@@ -18,6 +18,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'pry-rails'
 gem 'ransack'
 gem "puma"
+gem "figaro"
 
 group :production do
   gem "pg"
