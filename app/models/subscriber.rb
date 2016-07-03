@@ -1,5 +1,5 @@
 class Subscriber < ActiveRecord::Base
-  #before_create :generate_mug_number
+  before_create :generate_mug_number
 
   scope :subscribing, -> {where subscription_date > 1.year.ago}
   scope :non_subscribing, -> {where.not subscription_date > 1.year.ago}
@@ -30,8 +30,8 @@ class Subscriber < ActiveRecord::Base
 
   private
 
-  #def generate_mug_number
-  #  last_number = Subscriber.maximum(:mug_number) || 0
-    #self.mug_number = last_number + 1
-#  end
+  def generate_mug_number
+    last_number = Subscriber.maximum(:mug_number) || 0
+    self.mug_number = last_number + 1
+  end
 end
