@@ -17,7 +17,7 @@ class Subscriber < ActiveRecord::Base
   end
 
   def expiration_date
-    (subscription_date + 1.year).strftime("%-m/%-d/%-y")
+    (created_at + 1.year).strftime("%-m/%-d/%-y")
   end
 
   def days_till_expired

@@ -1,11 +1,11 @@
 require "rails_helper"
 
 RSpec.describe SubscriberMailer, type: :mailer do
-  describe "subscription_confirmation" do
-    let(:mail) { SubscriberMailer.subscription_confirmation }
+  describe "welcome_subscriber" do
+    let(:mail) { SubscriberMailer.welcome_subscriber }
 
     it "renders the headers" do
-      expect(mail.subject).to eq("Subscription confirmation")
+      expect(mail.subject).to eq("Welcome subscriber")
       expect(mail.to).to eq(["to@example.org"])
       expect(mail.from).to eq(["from@example.com"])
     end

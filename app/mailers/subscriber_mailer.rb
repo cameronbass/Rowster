@@ -1,13 +1,13 @@
 class SubscriberMailer < ApplicationMailer
-
+  default from: "cam@rowstercoffee.com"
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
-  #   en.subscriber_mailer.subscription_confirmation.subject
+  #   en.subscriber_mailer.welcome_subscriber.subject
   #
-  def subscription_confirmation(subscriber)
-    @subscriber = subscriber.email
+  def welcome_subscriber(subscriber)
+    @subscriber = subscriber
 
-    mail to: subscriber.email, subject: "Subscriber Confirmation"
+    mail to: subscriber.email
   end
 end
