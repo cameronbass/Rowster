@@ -1,5 +1,6 @@
 class Subscriber < ActiveRecord::Base
   before_create :generate_mug_number
+  after_create :subscribe_user_to_mailing_list
 
   scope :subscribing, -> {where subscription_date > 1.year.ago}
   scope :non_subscribing, -> {where.not subscription_date > 1.year.ago}
@@ -29,6 +30,10 @@ class Subscriber < ActiveRecord::Base
   end
 
   private
+
+  def subscribe_user_to_mailing_list
+    SubscribeUserToMailingListJob.perform_later(self)
+  end
 
   def generate_mug_number
     last_number = Subscriber.maximum(:mug_number) || 0

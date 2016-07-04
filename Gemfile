@@ -19,6 +19,7 @@ gem 'pry-rails'
 gem 'ransack'
 gem "puma"
 gem "figaro"
+gem 'gibbon',  '~>1.2.0'
 
 group :production do
   gem "pg"
