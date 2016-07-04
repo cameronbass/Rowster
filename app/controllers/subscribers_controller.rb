@@ -9,7 +9,7 @@ class SubscribersController < ApplicationController
   end
 
   def show
-    @subscriber = Subscriber.find_by(params[:id])
+    @subscriber = Subscriber.find_by(id: params[:id])
   end
 
   def new
