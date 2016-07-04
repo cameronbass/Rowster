@@ -1,1 +1,18 @@
-<h1>hello <%= @subscriber.first_name %></h1>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<body class="w3-container">
+
+<h2>subssr</h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-btn">Open Modal</button>
+
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn">&times;</span>
+      <p><%= @subscriber.first_name %></p>
+    </div>
+  </div>
+</div>
+</body>

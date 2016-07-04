@@ -10,6 +10,7 @@ class SubscribersController < ApplicationController
 
   def show
     @subscriber = Subscriber.find_by(id: params[:id])
+    render layout: 'modal'
   end
 
   def new
