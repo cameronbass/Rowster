@@ -31,7 +31,7 @@
     <tbody>
       <% @subscriber.each do |subscriber| %>
         <tr>
-          <td><%= subscriber.first_name %></td>
+          <td><%= link_to subscriber.first_name, subscriber_path(subscriber.id) %></td>
           <td><%= subscriber.last_name %></td>
           <td><%= subscriber.email %></td>
           <td><%= subscriber.phone_number %></td>

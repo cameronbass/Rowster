@@ -8,6 +8,10 @@ class SubscribersController < ApplicationController
     @search.build_sort if @search.sorts.empty?
   end
 
+  def show
+    @subscriber = Subscriber.find_by(params[:id])
+  end
+
   def new
     @subscriber = Subscriber.new
   end

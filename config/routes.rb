@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  
   devise_for :users
-  resources :subscribers, except: :show
-  resources :comments, only: [:new, :create]
 
   get "subscribers/search", to: "subscribers#search"
   get "subscribers/visit", to: "subscribers#visit"
+
+  resources :subscribers
+  resources :comments, only: [:new, :create]
 
   root "subscribers#new"
 
