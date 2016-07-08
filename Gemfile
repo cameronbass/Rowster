@@ -35,6 +35,7 @@ group :development, :test do
   gem "simplecov", require: false
   gem "shoulda-matchers"
   gem "rake"
+  gem "vcr"
 end
 
 group :development do
