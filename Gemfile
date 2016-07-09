@@ -19,6 +19,7 @@ gem 'pry-rails'
 gem 'ransack'
 gem "puma"
 gem "figaro"
+gem 'gibbon',  '~>1.2.0'
 
 group :production do
   gem "pg"
@@ -34,6 +35,7 @@ group :development, :test do
   gem "simplecov", require: false
   gem "shoulda-matchers"
   gem "rake"
+  gem "vcr"
 end
 
 group :development do
