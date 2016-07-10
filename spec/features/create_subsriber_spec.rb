@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Create a subscriber" do
-  scenario "Customer can sign up as a subscriber" do
+  it "Customer can sign up as a subscriber" do
     visit "/subscribers/new"
 
     user = FactoryGirl.create(:user)
@@ -18,7 +18,7 @@ RSpec.feature "Create a subscriber" do
     expect(page).to have_content("Subscriber Has Been Successfully Created")
   end
 
-  scenario "Subscriber can sign in" do
+  it "Subscriber can sign in" do
     visit "/subscribers/search"
 
     user = FactoryGirl.create(:user)

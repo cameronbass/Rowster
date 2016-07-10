@@ -1,10 +1,12 @@
-<h1>Welcome! Check In By Entering Your Phone Number</h1>
+<div class="sign_up">
+  <h1>Welcome! Check In By Entering Your Phone Number</h1>
 
-<%= form_tag({controller: "subscribers", action: "visit"}, method: "get") do %>
-  <div class="form-group">
-    <p>
-  <%= text_field_tag :phone_number %>
-    </p>
-  </div>
-  <%= submit_tag "Check In" %>
-<% end %>
+  <%= form_tag({controller: "subscribers", action: "visit"}, method: "get") do %>
+    <div class="form-group">
+      <p>
+        <%= text_field_tag :phone_number,  "", placeholder: "Phone", class: "text_field" %>
+      </p>
+    </div>
+    <%= submit_tag "Check In", class: "btn" %>
+  <% end %>
+</div>
