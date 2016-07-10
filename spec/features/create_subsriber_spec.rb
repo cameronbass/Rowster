@@ -11,7 +11,7 @@ RSpec.feature "Create a subscriber" do
 
     fill_in "subscriber_first_name", with: "Cam"
     fill_in "subscriber_last_name", with: "Bass"
-    fill_in "subscriber_email", with: "cam@example.com"
+    fill_in "subscriber_email", with: "cam@rowster.com"
     fill_in "subscriber_phone_number", with: "6168269338"
     click_button "Sign Up"
 
