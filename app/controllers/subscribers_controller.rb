@@ -14,6 +14,10 @@ class SubscribersController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @subscriber = Subscriber.find(params[:id])
+  end
+
   def show
     @subscriber = Subscriber.find_by(id: params[:id])
     render layout: 'modal'

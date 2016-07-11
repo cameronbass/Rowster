@@ -4,12 +4,12 @@ RSpec.feature "Create a Comment" do
   scenario "Customer can leave additional information" do
     visit "/comments/new"
 
-    user = FactoryGirl.create(:user)
+    user = create(:user)
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
     click_button "Sign in"
 
-    subscriber = FactoryGirl.create(:subscriber)
+    subscriber = create(:subscriber)
     fill_in "comment_fav_drink", with: "Latte"
     click_button "Send"
 

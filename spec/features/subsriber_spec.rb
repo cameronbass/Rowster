@@ -6,7 +6,7 @@ RSpec.feature "Create a subscriber" do
   it "Customer can sign up as a subscriber" do
     visit "/subscribers/new"
 
-    user = FactoryGirl.create(:user)
+    user = create(:user)
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
     click_button "Sign in"
@@ -23,12 +23,12 @@ RSpec.feature "Create a subscriber" do
   it "Subscriber can sign in" do
     visit "/subscribers/search"
 
-    user = FactoryGirl.create(:user)
+    user = create(:user)
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
     click_button "Sign in"
 
-    subscriber = FactoryGirl.create(:subscriber)
+    subscriber = create(:subscriber)
 
     fill_in "phone_number", with: "6168765555"
     click_button "Check In"
@@ -37,11 +37,11 @@ RSpec.feature "Create a subscriber" do
   end
 
   it "allows user to delete a subscriber" do
-    subscriber = FactoryGirl.create(:subscriber)
+    subscriber = create(:subscriber)
 
     visit "/subscribers/#{subscriber.id}"
 
-    user = FactoryGirl.create(:user)
+    user = create(:user)
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
     click_button "Sign in"
