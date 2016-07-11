@@ -1,1 +1,8 @@
-  <p><%= @subscriber.last_name %></p>
+<div class="container">
+  <h1>Find Out What This Guest Likes</h1>
+
+  <p>This is <%= @subscriber.first_name%> <%= @subscriber.last_name %></p>
+
+  <%= button_to "delete", {controller: :subscribers,
+      action: 'destroy', id: @subscriber.id }, method: :delete %>
+</div>

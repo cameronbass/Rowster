@@ -8,6 +8,12 @@ class SubscribersController < ApplicationController
     @search.build_sort if @search.sorts.empty?
   end
 
+  def destroy
+    @subscriber = Subscriber.find(params[:id]).destroy
+    flash[:sucess] = "Subscriber has been deleted"
+    redirect_to root_path
+  end
+
   def show
     @subscriber = Subscriber.find_by(id: params[:id])
     render layout: 'modal'

@@ -1,6 +1,8 @@
 require "rails_helper"
 
 RSpec.feature "Create a subscriber" do
+  let(:subscriber) { FactoryGirl.create(:subscriber) }
+
   it "Customer can sign up as a subscriber" do
     visit "/subscribers/new"
 
@@ -32,5 +34,21 @@ RSpec.feature "Create a subscriber" do
     click_button "Check In"
 
     expect(page).to_not have_content("thanks")
+  end
+
+  it "allows user to delete a subscriber" do
+    subscriber = FactoryGirl.create(:subscriber)
+
+    visit "/subscribers/#{subscriber.id}"
+
+    user = FactoryGirl.create(:user)
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_button "Sign in"
+
+    click_button "delete"
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Subscriber has been deleted")
   end
 end
