@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160702134426) do
+ActiveRecord::Schema.define(version: 20160821192323) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "description"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160702134426) do
     t.integer  "visit"
     t.integer  "mug_number"
     t.date     "subscription_date"
+    t.boolean  "active"
   end
 
   create_table "users", force: :cascade do |t|
