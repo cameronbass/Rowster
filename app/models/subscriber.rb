@@ -29,6 +29,12 @@ class Subscriber < ActiveRecord::Base
     subscription_date > 1.year.ago
   end
 
+  def non_active?(subscriber)
+    if subscription_date < 1.year.ago
+      subscriber.update(active: false)
+    end
+  end
+
   private
 
   def subscribe_user_to_mailing_list
