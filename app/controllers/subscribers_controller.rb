@@ -19,7 +19,7 @@ class SubscribersController < ApplicationController
   end
 
   def update
-    
+
   end
 
   def show
