@@ -51,4 +51,12 @@ RSpec.feature "Create a subscriber" do
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Subscriber has been deleted")
   end
+
+  it "sets active to false after a year" do
+    last_year = DateTime.current - 366.days
+    subscriber = create(:subscriber, active: true, subscription_date: last_year)
+    subscriber.inactive!
+
+    expect(subscriber.active).to eq false
+  end
 end

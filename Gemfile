@@ -20,6 +20,8 @@ gem 'ransack'
 gem "puma"
 gem "figaro"
 gem 'gibbon',  '~>1.2.0'
+gem 'sidekiq'
+gem 'whenever', :require => false
 
 group :production do
   gem "pg"

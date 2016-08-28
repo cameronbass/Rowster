@@ -29,10 +29,14 @@ class Subscriber < ActiveRecord::Base
     subscription_date > 1.year.ago
   end
 
-  def non_active?(subscriber)
-    if subscription_date < 1.year.ago
-      subscriber.update(active: false)
+  def self.set_subscribers_to_inactive
+    find_each(active: false) do |subscriber|
+      subscriber.inactive!
     end
+  end
+
+  def inactive!
+    update(active: false) if subscription_date < 1.year.ago
   end
 
   private
